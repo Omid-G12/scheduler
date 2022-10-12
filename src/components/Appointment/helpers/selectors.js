@@ -29,18 +29,22 @@ export function getInterviewersForDay(state, day) {
 }
 
 export function getInterview(state, interview) {
-  for (let int in state.interviewers) {
-    if (interview && int.id === interview.id) {
+  const interviewer = Object.values(state.interviewers)
+
+  for (let int of interviewer) {
+    
+    if (interview === null) {
       
+      return null
+    } else if (int.id === interview.interviewer) {
+
       let result = {
         "student": interview.student,
-        "interviewer": state.interviewers[int]
+        "interviewer": int
       };
-      
       return result;
-    } else {
-      return null;
     }
+    
   }
   
 }
