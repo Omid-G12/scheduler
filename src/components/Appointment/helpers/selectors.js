@@ -1,5 +1,5 @@
 export function getAppointmentsForDay(state, day) {
-  //... returns an array of appointments for that day
+  
   let appointments = [];
   let arr = [];
   for (let d of state.days) {
@@ -14,7 +14,7 @@ export function getAppointmentsForDay(state, day) {
 }
 
 export function getInterviewersForDay(state, day) {
-  //... returns an array of interviewers for that day
+  
   let interviewers = [];
   let arr = [];
   for (let d of state.days) {

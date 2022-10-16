@@ -21,7 +21,6 @@ export default function useApplicationData() {
 
   const updateSpots = function(state, appointments) {
 
-    // THIS IS NOT THE SOLUTION!!!
     let updatedDays   = [...state.days]
     const arr = [];
     
@@ -39,7 +38,7 @@ export default function useApplicationData() {
       day = {...days}
       arr.push(day);
     })
-    // return an updated days array
+    
     updatedDays = [...arr]
     return updatedDays
   }; 
