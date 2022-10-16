@@ -26,10 +26,10 @@ export default function Appointment(props) {
   );
 
   return(
-    <article className="appointment">
+    <article className="appointment" data-testid="appointment">
       <Header time={props.time} />
       {mode === EMPTY && <Empty onAdd={() => {
-        console.log("Clicked onAdd")
+
         transition(CREATE)
         }} />}
       {mode === SHOW && (
@@ -37,11 +37,11 @@ export default function Appointment(props) {
           student={props.interview.student}
           interviewer={props.interview.interviewer}
           onEdit={() => {
-            console.log("clicked on edit")
+    
             transition(EDIT)
           }}
           onDelete={() => {
-            console.log("clicked on delete")
+    
             transition(CONFIRM)
             
           }}
@@ -51,7 +51,7 @@ export default function Appointment(props) {
         <Form
           interviewers={props.interviewers}
           onSave={(name, interviewer) => {
-            console.log("clicked on save")
+    
             transition(SAVE)
             props.bookInterview(props.id, props.save(name, interviewer))
               .then (() => transition(SHOW))
@@ -60,7 +60,7 @@ export default function Appointment(props) {
               })
           }}
           onCancel={() => {
-            console.log("clicked on cancel")
+    
             back()
           }}
 
@@ -83,7 +83,7 @@ export default function Appointment(props) {
         interviewer={props.interview.interviewer}
         interviewers={props.interviewers}
           onSave={(name, interviewer) => {
-            console.log("clicked on save")
+    
             transition(SAVE)
             props.bookInterview(props.id, props.save(name, interviewer))
               .then (() => transition(SHOW))
@@ -91,16 +91,16 @@ export default function Appointment(props) {
               
           }}
           onCancel={() => {
-            console.log("clicked on cancel")
+    
             transition(SHOW)
           }}
       />}
       {mode === ERROR_DELETE && <Error 
-        message={"Can not delete!"}
+        message={"Could not cancel appointment."}
         onClose={() => back()}
       />}
       {mode === ERROR_SAVE && <Error
-        message={"Can not save!"}
+        message={"Could not book appointment."}
         onClose={() => back()}
       />}
 
