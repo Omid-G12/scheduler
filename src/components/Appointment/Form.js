@@ -29,10 +29,12 @@ export default function Form(props) {
     }
     
     setError("");
-    props.onSave(student, interviewer);
+    if (interviewer === null) {
+      props.onSave(student, interviewer)
+    } else {
+      props.onSave(student, interviewer.id)
+    }
   }
-
-
 
 
   return (
