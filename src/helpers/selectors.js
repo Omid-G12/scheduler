@@ -1,3 +1,4 @@
+//Takes in state and day and returns the appointments for that selected day
 export function getAppointmentsForDay(state, day) {
   
   let appointments = [];
@@ -13,6 +14,7 @@ export function getAppointmentsForDay(state, day) {
   return appointments;
 }
 
+//Takes in state and day and return the interviewers available for that selected day
 export function getInterviewersForDay(state, day) {
   
   let interviewers = [];
@@ -28,6 +30,8 @@ export function getInterviewersForDay(state, day) {
   return interviewers;
 }
 
+// Takes in state and an interview object, returns null if interview is null 
+// Returns an object with the student and interviewer object inside
 export function getInterview(state, interview) {
   const interviewer = Object.values(state.interviewers)
 

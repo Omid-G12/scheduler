@@ -19,6 +19,8 @@ export default function useApplicationData() {
     return interview;
   }
 
+  // Takes in state and appointments, returns the number of spots availble
+  // Based on number of appointments booked
   const updateSpots = function(state, appointments) {
 
     let updatedDays   = [...state.days]
