@@ -16,6 +16,12 @@ This one-page app built using Re-act, and acts as the client for interview booki
 
 Install dependencies with `npm install`.
 
+## Setup API
+
+The API can be found in : https://github.com/Omid-G12/scheduler-api
+- Follow the steps in the README file to install and setup the scheduler-api
+- The API server must run on a separate terminal window simultaneously with the main app server 
+
 ## Running Webpack Development Server
 
 ```sh
