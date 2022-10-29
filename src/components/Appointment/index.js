@@ -71,7 +71,7 @@ export default function Appointment(props) {
         message={"Are you sure you would like to delete?"}
         onCancel={ () => back()} 
         onConfirm={ () => {
-          transition(DELETE)
+          transition(DELETE, true)
           props.cancelInterview(props.id, props.interview)
             .then(() => {transition(EMPTY)})
             .catch(() => {transition(ERROR_DELETE, true)})
